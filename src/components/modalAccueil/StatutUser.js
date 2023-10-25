@@ -1,5 +1,12 @@
 import React from "react";
+import styled from "styled-components";
 
-export const StatutUser = () => {
-  return <div>StatutUser</div>;
+const StatutUser = () => {
+  return <StyledStatutUser>StatutUser</StyledStatutUser>;
 };
+
+export default StatutUser;
+
+const StyledStatutUser = styled.div`
+  background: red;
+`;

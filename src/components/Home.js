@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { StatutUser } from "./modalAccueil/StatutUser";
+import StatutUser from "./modalAccueil/StatutUser";
 
 const Home = () => {
   return (
