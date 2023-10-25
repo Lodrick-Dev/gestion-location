@@ -8,7 +8,9 @@ const StatutUser = () => {
   return (
     <StyledStatutUser>
       {register ? <FormOne /> : <FormConnexion />}
-      <span onClick={() => setRegister(!register)}>Pas encore inscrit ?</span>
+      <span onClick={() => setRegister(!register)}>
+        {register ? "Je me connecte" : "Pas encore inscrit ?"}
+      </span>
     </StyledStatutUser>
   );
 };
