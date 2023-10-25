@@ -16,7 +16,6 @@ const FormConnexion = () => {
       className="animate__animated animate__backInRight animate__faster"
       onSubmit={(e) => handleConnect(e)}
     >
-      <h2>Connexion</h2>
       <input type="email" placeholder="Email" />
       <div className="div">
         <input
@@ -50,10 +49,6 @@ const StyledFormConnexion = styled.form`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
   .div {
     width: 100%;
     position: relative;
