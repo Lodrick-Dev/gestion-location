@@ -16,13 +16,15 @@ const StatutUser = () => {
 export default StatutUser;
 
 const StyledStatutUser = styled.div`
-  background: red;
-  height: 30vh;
-  width: 50%;
+  background: #f56647f7;
+  border-radius: 10px;
+  height: 40vh;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: -10px 14px 19px -3px rgba(0, 0, 0, 0.45);
   span {
     cursor: pointer;
     user-select: none;
