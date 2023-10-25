@@ -17,4 +17,7 @@ const HomeStyled = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
