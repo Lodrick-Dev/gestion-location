@@ -4,7 +4,7 @@ import FormConnexion from "../formAccueil/FormConnexion";
 import FormOne from "../formAccueil/FormOne";
 
 const StatutUser = () => {
-  const [register, setRegister] = useState(false);
+  const [register, setRegister] = useState(true);
   return (
     <StyledStatutUser>
       {register ? <h2>Inscription</h2> : <h2>Connexion</h2>}
