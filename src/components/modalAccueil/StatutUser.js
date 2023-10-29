@@ -3,6 +3,7 @@ import styled from "styled-components";
 import FormConnexion from "../formAccueil/FormConnexion";
 import FormDynamic from "../formAccueil/FormDynamic";
 import { Dynamic } from "../../context/DynamicContext";
+import PreviewRegister from "../preview/PreviewRegister";
 
 const StatutUser = () => {
   const [register, setRegister] = useState(true);
@@ -10,7 +11,10 @@ const StatutUser = () => {
   return (
     <StyledStatutUser>
       {infosRegister[0] && (
-        <strong onClick={() => setInfosRegister([])}>Annuler</strong>
+        <>
+          <strong onClick={() => setInfosRegister([])}>Annuler</strong>
+          <PreviewRegister />{" "}
+        </>
       )}
       {register ? <h2>Inscription</h2> : <h2>Connexion</h2>}
       {register ? <FormDynamic /> : <FormConnexion />}
@@ -25,8 +29,9 @@ export default StatutUser;
 
 const StyledStatutUser = styled.div`
   background: #f56647f7;
+  padding: 5px;
   border-radius: 10px;
-  height: 50vh;
+  /* height: 50vh; */
   width: 40%;
   display: flex;
   flex-direction: column;
