@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import styled from "styled-components";
 import ModalMenuStatistiques from "./ModalMenuStatistiques";
+import Button from "../../global/Button";
 
 const Statistiques = () => {
   const [locationBy, setLocationBy] = useState(false);
@@ -55,6 +56,13 @@ const Statistiques = () => {
           </BarChart>
         </ResponsiveContainer>
       </div>
+      <div className="zone-btns">
+        <Button text={"En cours"} classCss="no-dispo" />
+        <Button text={"Disponible"} classCss="dispo" />
+        <Button text={"En maintenance"} classCss="maintenance" />
+        <Button text={"Nouvelle Location"} classCss="add-loca" />
+        <Button text={"Ajouter un nouveau bien"} classCss="add-material" />
+      </div>
     </StyledStatistiques>
   );
 };
@@ -79,15 +87,46 @@ const StyledStatistiques = styled.div`
     align-items: center;
   }
   .lolchart {
-    /* background: pink; */
-    /* position: relative; */
-    /* height: 0px !important;
-    width: 0px !important; */
     height: 80% !important;
     width: 80% !important;
-    /* display: block; */
   }
   .bar {
     cursor: pointer;
+  }
+  .zone-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .no-dispo {
+    background: #ff8d8d;
+    padding: 10px;
+    /* box-shadow: 0px 0px 10px rgba(255, 141, 141, 0.7); */
+    box-shadow: 0px 0px 10px #ff8d8db3;
+    color: white;
+  }
+  .dispo {
+    background: #71e07a;
+    padding: 10px;
+    box-shadow: 0px 0px 10px #71e07ab3;
+    color: white;
+  }
+  .maintenance {
+    background: #ff9900;
+    padding: 10px;
+    box-shadow: 0px 0px 10px #ff9900b3;
+    color: white;
+  }
+  .add-loca {
+    background: #3498db;
+    padding: 10px;
+    box-shadow: 0px 0px 10px #3498dbb3;
+    color: white;
+  }
+  .add-material {
+    background: #6c6c6c;
+    color: #3498db;
+    padding: 10px;
+    box-shadow: 0px 0px 10px #3498dbb3;
   }
 `;

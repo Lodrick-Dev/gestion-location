@@ -1,14 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-const Button = ({ actionClick, text }) => {
-  return <StyledButton onClick={actionClick}>{text}</StyledButton>;
+const Button = ({ actionClick, text, classCss }) => {
+  return (
+    <StyledButton onClick={actionClick} className={classCss} $css={classCss}>
+      {text}
+    </StyledButton>
+  );
 };
 
 export default Button;
 
-const StyledButton = styled.div`
-  background: #eeee00;
+const StyledButton = styled.button`
+  background: ${({ $css }) => (!$css ? "#eeee00" : undefined)};
+  /* background: #eeee00; */
   border: none;
   outline: none;
   cursor: pointer;
