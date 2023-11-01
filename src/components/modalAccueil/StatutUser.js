@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import FormConnexion from "../formAccueil/FormConnexion";
 import FormDynamic from "../formAccueil/FormDynamic";
@@ -6,8 +6,13 @@ import { Dynamic } from "../../context/DynamicContext";
 import PreviewRegister from "../preview/PreviewRegister";
 
 const StatutUser = () => {
-  const [register, setRegister] = useState(true);
   const { infosRegister, setInfosRegister } = Dynamic();
+  const [register, setRegister] = useState(true);
+
+  useEffect(() => {
+    setInfosRegister([]);
+  }, [register]);
+
   return (
     <StyledStatutUser>
       {infosRegister[0] && (
@@ -31,7 +36,6 @@ const StyledStatutUser = styled.div`
   background: #f56647f7;
   padding: 5px;
   border-radius: 10px;
-  /* height: 50vh; */
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -41,6 +45,9 @@ const StyledStatutUser = styled.div`
   h2 {
     font-size: 2em;
     margin-bottom: 10px;
+  }
+  strong {
+    cursor: pointer;
   }
   span {
     cursor: pointer;

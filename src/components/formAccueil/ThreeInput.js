@@ -6,17 +6,17 @@ const ThreeInput = ({ setEmail, setPassword, setCodeAcces }) => {
     <StyledThreeInput className="animate__animated animate__bounceInRight animate__faster">
       <input
         type="text"
-        placeholder="Email"
+        placeholder="Email*"
         onChange={(e) => setEmail(e.target.value)}
       />
       <input
         type="text"
-        placeholder="Mot de passe"
+        placeholder="Mot de passe*"
         onChange={(e) => setPassword(e.target.value)}
       />
       <input
         type="text"
-        placeholder="Code d'accès"
+        placeholder="Code d'accè*"
         onChange={(e) => setCodeAcces(e.target.value)}
       />
     </StyledThreeInput>
@@ -25,5 +25,10 @@ const ThreeInput = ({ setEmail, setPassword, setCodeAcces }) => {
 
 export default ThreeInput;
 const StyledThreeInput = styled.div`
-  background: green;
+  /* background: green; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;

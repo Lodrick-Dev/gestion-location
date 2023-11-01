@@ -54,7 +54,7 @@ const FormDynamic = () => {
       {!infosRegister.length ? (
         <input
           type="text"
-          placeholder="Entreprise"
+          placeholder="Entreprise*"
           onChange={(e) => setCompany(e.target.value)}
         />
       ) : infosRegister.length > 1 ? (
@@ -73,7 +73,6 @@ const FormDynamic = () => {
 
 export default FormDynamic;
 const StyledFormDynamic = styled.form`
-  /* background: red; */
   width: 70%;
   padding: 10px;
   display: flex;

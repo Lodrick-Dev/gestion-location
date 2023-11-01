@@ -6,12 +6,12 @@ const TwoInput = ({ setName, setPrenom }) => {
     <StyledTwoInput className="animate__animated animate__bounceInRight animate__faster">
       <input
         type="text"
-        placeholder="Nom"
+        placeholder="Nom*"
         onChange={(e) => setName(e.target.value)}
       />
       <input
         type="text"
-        placeholder="Prénom"
+        placeholder="Prénom*"
         onChange={(e) => setPrenom(e.target.value)}
       />
     </StyledTwoInput>
@@ -21,5 +21,9 @@ const TwoInput = ({ setName, setPrenom }) => {
 export default TwoInput;
 
 const StyledTwoInput = styled.div`
-  background: red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
