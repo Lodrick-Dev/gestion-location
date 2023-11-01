@@ -3,10 +3,10 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 const DynamicContext = createContext();
 export const DynamicContextProvider = ({ children }) => {
   const locationUrl = useLocation();
-  const [user, setUser] = useState(null);
-  const [pop, setPop] = useState(false);
-  const [infosRegister, setInfosRegister] = useState([]);
-  const [auth, setAuth] = useState("");
+  const [user, setUser] = useState(null); //l'info de celuii qui est connecté
+  const [pop, setPop] = useState(false); //pour affiché les infos complé
+  const [infosRegister, setInfosRegister] = useState([]); //to register temporaire
+  const [auth, setAuth] = useState(""); //to navigue vers authentification
   const navigation = useNavigate();
   const paramsUrl = useParams();
   return (

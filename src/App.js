@@ -5,12 +5,14 @@ import Footer from "./components/Footer";
 import "animate.css";
 import RoutePrivate from "./components/private/RoutePrivate";
 import Authentification from "./components/authentification/Authentification";
+import Header from "./components/Header";
 
 const App = () => {
   //ici on check le cookie de l'user
   //et envoie le user à /auth/:id
   return (
     <>
+      <Header />
       <Routes>
         <Route path="*" element={<Home />} />
         <Route
