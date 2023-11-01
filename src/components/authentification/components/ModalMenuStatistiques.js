@@ -21,13 +21,18 @@ export default ModalMenuStatistiques;
 
 const StyledModalMenuStatistiques = styled.div`
   /* background: greenyellow; */
-  width: 10%;
+  width: 15%;
   margin: 0px auto;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  h1 {
+    font-size: 2.3em;
+    margin: 10px auto;
+    text-decoration: underline;
+  }
   select {
     text-align: center;
     margin: 5px auto;

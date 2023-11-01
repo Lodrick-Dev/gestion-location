@@ -34,6 +34,7 @@ const Statistiques = () => {
   };
   return (
     <StyledStatistiques>
+      <ModalMenuStatistiques setLocationBy={setLocationBy} />
       <div className="sous-before-graph">
         <ResponsiveContainer className="lolchart">
           <BarChart data={data} stroke="white">
@@ -54,7 +55,6 @@ const Statistiques = () => {
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <ModalMenuStatistiques setLocationBy={setLocationBy} />
     </StyledStatistiques>
   );
 };
@@ -70,6 +70,7 @@ const StyledStatistiques = styled.div`
   .sous-before-graph {
     background: #292929cc;
     box-shadow: -7px 8px 14px 3px rgb(0 0 0 / 32%);
+    backdrop-filter: blur(5px);
     height: 50vh;
     padding: 15px;
     display: flex;
