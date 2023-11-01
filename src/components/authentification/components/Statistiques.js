@@ -6,21 +6,140 @@ import Button from "../../global/Button";
 
 const Statistiques = () => {
   const [locationBy, setLocationBy] = useState(false);
+  //quand locationBy sa valeur est "client" alors on retour,
+  //tous les clients, et combien de fois ils ont loué
   const data = [
-    { name: "Jane", age: 5, location: 5, date: "", locationBy: "Marie" },
-    { name: "Rude", age: 1, location: 10, date: "", locationBy: "Marcus" },
-    { name: "Monkey", age: 5, location: 20, date: "", locationBy: "Martin" },
-    { name: "Louva", age: 10, location: 7, date: "", locationBy: "Sophie" },
-    { name: "Le bouc", age: 4, location: 10, date: "", locationBy: "Manon" },
-    { name: "Monster", age: 15, location: 1, date: "", locationBy: "Doe" },
-    { name: "Bad PPPPing", age: 3, location: 2, date: "", locationBy: "Julie" },
-    { name: "Pouf", age: 1, location: 41, date: "", locationBy: "Delphie" },
-    { name: "La grosse", age: 4, location: 8, date: "", locationBy: "Bof" },
-    { name: "La gros", age: 4, location: 8, date: "", locationBy: "Yves" },
-    { name: "osse", age: 4, location: 20, date: "", locationBy: "Macro" },
-    { name: "La rose", age: 4, location: 51, date: "", locationBy: "Poss" },
-    { name: "Lasse", age: 4, location: 5, date: "", locationBy: "Boum" },
-    { name: "Grosse", age: 4, location: 12, date: "", locationBy: "Jam" },
+    {
+      name: "Jane",
+      age: 5,
+      location: 5,
+      date: "",
+      locationBy: ["Marie", "steeve", "Nel", "Marièm"],
+    },
+    {
+      name: "Rude",
+      age: 1,
+      location: 10,
+      date: "",
+      locationBy: [
+        "Marcus",
+        "Boub",
+        "Caro",
+        "Norla",
+        "Paris",
+        "Lili B",
+        "Marie",
+      ],
+    },
+    {
+      name: "Monkey",
+      age: 5,
+      location: 20,
+      date: "",
+      locationBy: ["Martin", "Tintin", "Georgie"],
+    },
+    {
+      name: "Louva",
+      age: 10,
+      location: 7,
+      date: "",
+      locationBy: ["Sophie", "Bibi", "Yvie"],
+    },
+    {
+      name: "Le bouc",
+      age: 4,
+      location: 10,
+      date: "",
+      locationBy: [
+        "Martin",
+        "Tintin",
+        "Georgie",
+        "Sophie",
+        "Bibi",
+        "Yvie",
+        "Nel",
+        "Marièm",
+      ],
+    },
+    {
+      name: "Monster",
+      age: 15,
+      location: 1,
+      date: "",
+      locationBy: [
+        "Marcus",
+        "Boub",
+        "Caro",
+        "Norla",
+        "Paris",
+        "Lili B",
+        "Marie",
+        "Doe",
+        "Marc",
+      ],
+    },
+    {
+      name: "Bad PPPPing",
+      age: 3,
+      location: 2,
+      date: "",
+      locationBy: ["Julie", "Georgie", "Sophie", "Bibi"],
+    },
+    {
+      name: "Pouf",
+      age: 1,
+      location: 41,
+      date: "",
+      locationBy: [
+        "Delphie",
+        "Martin",
+        "Tintin",
+        "Georgie",
+        "Sophie",
+        "Bibi",
+        "Yvie",
+      ],
+    },
+    {
+      name: "La grosse",
+      age: 4,
+      location: 8,
+      date: "",
+      locationBy: [
+        "Bof",
+        "Martin",
+        "Tintin",
+        "Georgie",
+        "Sophie",
+        "Bibi",
+        "Yvie",
+        "Martin",
+        "Tintin",
+        "Georgie",
+        "Sophie",
+        "Bibi",
+        "Yvie",
+      ],
+    },
+    {
+      name: "La gros",
+      age: 4,
+      location: 8,
+      date: "",
+      locationBy: [
+        "Yves",
+        "Marcus",
+        "Boub",
+        "Caro",
+        "Marcus",
+        "Boub",
+        "Caro",
+        "Norla",
+        "Paris",
+        "Lili B",
+        "Marie",
+      ],
+    },
   ];
   const renderCustomBarLabel = ({ payload, x, y, width, height, value }) => {
     return (
@@ -37,19 +156,20 @@ const Statistiques = () => {
     <StyledStatistiques>
       <ModalMenuStatistiques setLocationBy={setLocationBy} />
       <div className="sous-before-graph">
+        <span>
+          Nombre de location <strong>{data.length}</strong>
+        </span>
         <ResponsiveContainer className="lolchart">
           <BarChart data={data} stroke="white">
-            <XAxis
-              dataKey={locationBy ? "locationBy" : "name"}
-              stroke="white"
-            />
+            <XAxis dataKey={"name"} stroke="white" />
             {/* <YAxis /> */}
             <Bar
               barSize={40}
-              dataKey={"location"}
+              //   dataKey={"location"}
+              dataKey={"locationBy.length"}
               fill="#8884d8"
               label={renderCustomBarLabel}
-              onClick={(e) => alert(e.name)}
+              onClick={(e) => console.log(e)}
               className="bar"
               stroke="white"
             />
@@ -82,9 +202,13 @@ const StyledStatistiques = styled.div`
     height: 50vh;
     padding: 15px;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+  }
+  span {
+    color: white;
   }
   .lolchart {
     height: 80% !important;
