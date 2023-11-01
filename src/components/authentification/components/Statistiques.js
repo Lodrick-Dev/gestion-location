@@ -3,16 +3,25 @@ import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import styled from "styled-components";
 import ModalMenuStatistiques from "./ModalMenuStatistiques";
 import Button from "../../global/Button";
+import { Dynamic } from "../../../context/DynamicContext";
 
 const Statistiques = () => {
+  const { pop, setPop } = Dynamic();
   const [locationBy, setLocationBy] = useState(false);
   //quand locationBy sa valeur est "client" alors on retour,
   //tous les clients, et combien de fois ils ont loué
+  //********* */
+  //dans la data a l'index "location" ->
+  //on doit savoir de quand a quand le bien n'est pas disponible
+  //si cet index est vide alors c'est disponible
+  //si c'est pas vide alors on vérifie la date indiqué dedans
+  //pour savoir a partir de quand c'est et jusqu'a quand c'est louer
   const data = [
     {
       name: "Jane",
+      maintenance: 1,
       age: 5,
-      location: 5,
+      location: ["1", "Nel", "date 511313311"],
       date: "",
       locationBy: ["Marie", "steeve", "Nel", "Marièm"],
     },
@@ -152,12 +161,21 @@ const Statistiques = () => {
       >{`${value}`}</text>
     );
   };
+
+  const displayPop = (e) => {
+    console.log(e);
+    // setPop(!pop);
+    if (e.target.textContent === "En cours") {
+      //liste des biens en cours
+      console.log("Les des biens en cours");
+    }
+  };
   return (
     <StyledStatistiques>
       <ModalMenuStatistiques setLocationBy={setLocationBy} />
       <div className="sous-before-graph">
         <span>
-          Nombre de location <strong>{data.length}</strong>
+          Nombre de bien <strong>{data.length}</strong>
         </span>
         <ResponsiveContainer className="lolchart">
           <BarChart data={data} stroke="white">
@@ -177,7 +195,11 @@ const Statistiques = () => {
         </ResponsiveContainer>
       </div>
       <div className="zone-btns">
-        <Button text={"En cours"} classCss="no-dispo" />
+        <Button
+          actionClick={(e) => displayPop(e)}
+          text={"En cours"}
+          classCss="no-dispo"
+        />
         <Button text={"Disponible"} classCss="dispo" />
         <Button text={"En maintenance"} classCss="maintenance" />
         <Button text={"Nouvelle Location"} classCss="add-loca" />
