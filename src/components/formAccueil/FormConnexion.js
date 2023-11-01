@@ -4,23 +4,37 @@ import ButtonForm from "../global/ButtonForm";
 import { useState } from "react";
 import { FaRegLaughBeam } from "react-icons/fa";
 import { TbMoodNeutral } from "react-icons/tb";
+import { Dynamic } from "../../context/DynamicContext";
 
 const FormConnexion = () => {
+  const { setAuth, navigation } = Dynamic();
   const [showMdp, setShowMdp] = useState(false);
+  const [inputEmail, setInputEmail] = useState("");
+  const [inputMdp, setInputMdp] = useState("");
+  const param = "Entreprise C";
   const handleConnect = async (e) => {
     e.preventDefault();
-    alert("ok bro");
+    if (!inputEmail || !inputMdp) return alert("Veuillez remplir les champs");
+    //on vérifie si user dans la database
+    //puis on passe name entrepris en param
+    setAuth("Entreprise");
+    navigation(`/auth/${param}`);
   };
   return (
     <StyledFormConnexion
       className="animate__animated animate__backInRight animate__faster"
       onSubmit={(e) => handleConnect(e)}
     >
-      <input type="email" placeholder="Email" />
+      <input
+        type="email"
+        placeholder="Email*"
+        onChange={(e) => setInputEmail(e.target.value)}
+      />
       <div className="div">
         <input
           type={showMdp ? "text" : "password"}
-          placeholder="Mot de passe"
+          placeholder="Mot de passe*"
+          onChange={(e) => setInputMdp(e.target.value)}
         />
         {showMdp ? (
           <FaRegLaughBeam
