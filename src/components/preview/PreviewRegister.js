@@ -1,5 +1,6 @@
 import React from "react";
 import { Dynamic } from "../../context/DynamicContext";
+import styled from "styled-components";
 
 const PreviewRegister = () => {
   const { infosRegister } = Dynamic();
@@ -29,13 +30,29 @@ const PreviewRegister = () => {
       </div>
     );
   };
+
+  //view web
   return (
-    <div>
+    <StyledPreviewRegister>
       {infosRegister.map((item, index) => (
         <div key={index}>{renderInfo(item, index)}</div>
       ))}
-    </div>
+    </StyledPreviewRegister>
   );
 };
 
 export default PreviewRegister;
+
+const StyledPreviewRegister = styled.div`
+  background: blue;
+  /* width: 80%; */
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+  }
+`;
