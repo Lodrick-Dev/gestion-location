@@ -4,6 +4,7 @@ const DynamicContext = createContext();
 export const DynamicContextProvider = ({ children }) => {
   const locationUrl = useLocation();
   const [user, setUser] = useState(null); //l'info de celuii qui est connecté
+  const [naviStatiCalend, setNaviStatiCalend] = useState(false);
   const [pop, setPop] = useState(false); //pour affiché les infos complé
   const [infosRegister, setInfosRegister] = useState([]); //to register temporaire
   const [auth, setAuth] = useState(""); //to navigue vers authentification
@@ -23,6 +24,8 @@ export const DynamicContextProvider = ({ children }) => {
         setAuth,
         navigation,
         paramsUrl,
+        naviStatiCalend,
+        setNaviStatiCalend,
       }}
     >
       {children}
