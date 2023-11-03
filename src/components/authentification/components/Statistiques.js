@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import styled from "styled-components";
 import ModalMenuStatistiques from "./ModalMenuStatistiques";
 import Button from "../../global/Button";
 import { Dynamic } from "../../../context/DynamicContext";
 import Graphi from "./Graphi";
-import Calendar from "./Calendar";
+import Calend from "./Calendar";
 
 const Statistiques = () => {
   const { pop, setPop, naviStatiCalend } = Dynamic();
@@ -22,7 +21,8 @@ const Statistiques = () => {
   return (
     <StyledStatistiques>
       <ModalMenuStatistiques setLocationBy={setLocationBy} />
-      {naviStatiCalend ? <Calendar /> : <Graphi />}
+      {naviStatiCalend ? <Calend /> : <Graphi />}
+      <h1>Statut et action des biens</h1>
       <div className="zone-btns">
         <Button
           actionClick={(e) => displayPop(e)}
@@ -44,12 +44,17 @@ const StyledStatistiques = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
 
   .zone-btns {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+  }
+  h1 {
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: underline;
   }
   .no-dispo {
     background: #ff8d8d;

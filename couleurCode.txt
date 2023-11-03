@@ -2,5 +2,11 @@ orange corail transparent : #f56647f7,
 box-shadow: -10px 14px 19px -3px rgba(0, 0, 0, 0.45);
 border couleur input : #00a3ee;
 border couleur box : #0781b9
+code coleur header background : #150747
+En cours : #ff8d8d;
+dispo : #71e07a
+maintenance : #ff9900;
+add-loca: #3498db;
+add-material: #6c6c6c;
 
 ***on doit désinstallé chartJS et ces supplement
