@@ -5,6 +5,7 @@ import Button from "../../global/Button";
 import { Dynamic } from "../../../context/DynamicContext";
 import Graphi from "./Graphi";
 import Calend from "./Calendar";
+import Popup from "../../reusable/Popup";
 
 const Statistiques = () => {
   const { pop, setPop, naviStatiCalend } = Dynamic();
@@ -29,10 +30,19 @@ const Statistiques = () => {
           text={"En cours"}
           classCss="no-dispo"
         />
-        <Button text={"Disponible"} classCss="dispo" />
+        <Button
+          //   actionClick={() => setPop(!pop)}
+          text={"Disponible"}
+          classCss="dispo"
+        />
         <Button text={"En maintenance"} classCss="maintenance" />
-        <Button text={"Nouvelle Location"} classCss="add-loca" />
+        <Button
+          actionClick={() => setPop(!pop)}
+          text={"Nouvelle Location"}
+          classCss="add-loca"
+        />
         <Button text={"Ajouter un nouveau bien"} classCss="add-material" />
+        <Popup />
       </div>
     </StyledStatistiques>
   );
