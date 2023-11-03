@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import AddLocation from "../authentification/forms/AddLocation";
 import { Dynamic } from "../../context/DynamicContext";
@@ -8,6 +8,18 @@ const Popup = () => {
   const chooseCompo = () => {
     return <AddLocation />;
   };
+  useEffect(() => {
+    const body = document.querySelector("body");
+    //remove overflow when pop display
+    const remvOverflow = () => {
+      if (pop) {
+        body.classList.add("rmv");
+      } else {
+        body.classList.remove("rmv");
+      }
+    };
+    remvOverflow();
+  }, [pop]);
   return (
     <StyledPopup $css={pop} onClick={() => setPop(!pop)}>
       {chooseCompo()}
