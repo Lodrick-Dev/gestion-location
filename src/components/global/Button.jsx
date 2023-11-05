@@ -26,4 +26,16 @@ const StyledButton = styled.button`
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   color: #353935;
   margin-top: 10px;
+  @media screen and (max-width: 884px) {
+    width: 50%;
+  }
+
+  /* //iphone 13 prox max 428px
+  @media screen and (min-width: 425px) {
+    width: 70%;
+  }
+  //iphone 13 390px
+  @media screen and (max-width: 390px) {
+    width: 70% !important;
+  } */
 `;

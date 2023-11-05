@@ -95,4 +95,17 @@ const StyledFormConnexion = styled.form`
     transition: 0.1s;
     border-bottom: solid 3px #00a3ee;
   }
+
+  //884px = 768px
+  @media screen and (max-width: 884px) {
+    width: 90%;
+  }
+  //428px iphone 13 pro max
+  @media screen and (max-width: 428px) {
+    width: 100%;
+    input,
+    .div > input {
+      font-size: 1.3em;
+    }
+  }
 `;

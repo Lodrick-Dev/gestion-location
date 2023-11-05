@@ -53,4 +53,13 @@ const StyledStatutUser = styled.div`
     cursor: pointer;
     user-select: none;
   }
+  //884px = 768px
+  @media screen and (max-width: 884px) {
+    width: 55%;
+  }
+
+  //428px iphone 13
+  @media screen and (max-width: 428px) {
+    width: 85%;
+  }
 `;

@@ -94,4 +94,18 @@ const StyledFormDynamic = styled.form`
     transition: 0.1s;
     border-bottom: solid 3px #00a3ee;
   }
+  //884px = 768px
+  @media screen and (max-width: 884px) {
+    width: 85%;
+    input {
+      width: 95%;
+      font-size: 1.3em;
+    }
+  }
+  //428px iphone 13
+  @media screen and (max-width: 428px) {
+    input {
+      width: 100%;
+    }
+  }
 `;

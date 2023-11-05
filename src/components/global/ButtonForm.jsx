@@ -20,4 +20,8 @@ const StyledButtonForm = styled.button`
     transition: 0.3s;
     background: #f3ed7b;
   }
+  //iphone 13 prox max 428px
+  @media screen and (max-width: 428px) {
+    width: 70%;
+  }
 `;

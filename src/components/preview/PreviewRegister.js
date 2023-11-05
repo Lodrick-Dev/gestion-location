@@ -44,11 +44,12 @@ const PreviewRegister = () => {
 export default PreviewRegister;
 
 const StyledPreviewRegister = styled.div`
-  background: blue;
-  /* width: 80%; */
-  padding: 10px;
+  /* background: blue; */
+  width: 100%;
+  padding: 5px;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   div {
     display: flex;
     justify-content: center;
