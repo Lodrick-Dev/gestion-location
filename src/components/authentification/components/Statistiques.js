@@ -132,4 +132,7 @@ const StyledStatistiques = styled.div`
       transform: rotateY(225deg);
     }
   }
+  .logo-menu:hover {
+    animation-play-state: paused;
+  }
 `;
