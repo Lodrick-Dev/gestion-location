@@ -2,11 +2,29 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import AddLocation from "../authentification/forms/AddLocation";
 import { Dynamic } from "../../context/DynamicContext";
+import AddNewMaterial from "../authentification/forms/AddNewMaterial";
+import Current from "../authentification/components/Current";
+import Dispo from "../authentification/components/Dispo";
+import Maintenance from "../authentification/components/Maintenance";
 
 const Popup = () => {
   const { pop, setPop } = Dynamic();
   const chooseCompo = () => {
-    return <AddLocation />;
+    switch (pop) {
+      case "en-cours":
+        return <Current />;
+      case "dispo":
+        return <Dispo />;
+      case "maintenance":
+        return <Maintenance />;
+      case "new-location":
+        return <AddLocation />;
+      case "add-materiel":
+        return <AddNewMaterial />;
+
+      default:
+        break;
+    }
   };
   useEffect(() => {
     const body = document.querySelector("body");
@@ -21,7 +39,7 @@ const Popup = () => {
     remvOverflow();
   }, [pop]);
   return (
-    <StyledPopup $css={pop} onClick={() => setPop(!pop)}>
+    <StyledPopup $css={pop} onClick={() => setPop("")}>
       {chooseCompo()}
     </StyledPopup>
   );
@@ -31,7 +49,7 @@ export default Popup;
 const StyledPopup = styled.div`
   display: ${({ $css }) => ($css ? "flex" : "none")};
   background: #292929cc;
-  position: absolute;
+  position: fixed;
   /* display: flex; */
   justify-content: center;
   align-items: center;

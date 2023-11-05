@@ -11,14 +11,14 @@ const Statistiques = () => {
   const { pop, setPop, naviStatiCalend } = Dynamic();
   const [locationBy, setLocationBy] = useState(false);
 
-  const displayPop = (e) => {
-    console.log(e);
-    // setPop(!pop);
-    if (e.target.textContent === "En cours") {
-      //liste des biens en cours
-      console.log("Les des biens en cours");
-    }
-  };
+  //   const displayPop = (e) => {
+  //     console.log(e);
+  //     // setPop(!pop);
+  //     if (e.target.textContent === "En cours") {
+  //       //liste des biens en cours
+  //       console.log("Les des biens en cours");
+  //     }
+  //   };
   return (
     <StyledStatistiques>
       <ModalMenuStatistiques setLocationBy={setLocationBy} />
@@ -26,22 +26,30 @@ const Statistiques = () => {
       <h1>Statut et action des biens</h1>
       <div className="zone-btns">
         <Button
-          actionClick={(e) => displayPop(e)}
+          actionClick={() => setPop("en-cours")}
           text={"En cours"}
           classCss="no-dispo"
         />
         <Button
-          //   actionClick={() => setPop(!pop)}
+          actionClick={() => setPop("dispo")}
           text={"Disponible"}
           classCss="dispo"
         />
-        <Button text={"En maintenance"} classCss="maintenance" />
         <Button
-          actionClick={() => setPop(!pop)}
+          actionClick={() => setPop("maintenance")}
+          text={"En maintenance"}
+          classCss="maintenance"
+        />
+        <Button
+          actionClick={() => setPop("new-location")}
           text={"Nouvelle Location"}
           classCss="add-loca"
         />
-        <Button text={"Ajouter un nouveau bien"} classCss="add-material" />
+        <Button
+          actionClick={() => setPop("add-materiel")}
+          text={"Ajouter un nouveau bien"}
+          classCss="add-material"
+        />
         <Popup />
       </div>
     </StyledStatistiques>
