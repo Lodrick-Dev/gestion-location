@@ -4,13 +4,16 @@ import { Dynamic } from "../context/DynamicContext";
 import Button from "./global/Button";
 
 const Header = () => {
-  const { setAuth, navigation } = Dynamic();
+  const { setAuth, navigation, locationUrl } = Dynamic();
   const logout = () => {
     setAuth("");
     navigation("/");
   };
   return (
-    <StyledHeader className="animate__animated animate__slideInUp">
+    <StyledHeader
+      className="animate__animated animate__slideInUp"
+      $css={locationUrl.pathname}
+    >
       <div>
         <Button actionClick={() => logout()} text={"Déconnexion"} />
       </div>
@@ -23,7 +26,7 @@ export default Header;
 const StyledHeader = styled.header`
   transition: 3s;
   background: grey;
-  display: flex;
+  display: ${({ $css }) => ($css === "/" ? "none" : "flex")};
   justify-content: center;
   align-items: center;
   position: absolute;
