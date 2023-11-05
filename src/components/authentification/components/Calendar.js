@@ -21,6 +21,14 @@ const Calend = () => {
       title: "Événement passé 2",
     },
     {
+      description: "la eptite description",
+      email: "prolodrick@gmail.com",
+      title: "Bateau",
+      nom: "Karine",
+      start: "2023-11-06",
+      end: "2023-11-09",
+    },
+    {
       start: new Date(2023, 10, 1, 10, 0), // Date de début de l'événement
       end: new Date(2023, 10, 1, 12, 0), // Date de fin de l'événement
       title: "Réunion importante", // Titre de l'événement (peut être personnalisé)
