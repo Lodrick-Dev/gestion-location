@@ -5,10 +5,12 @@ import Button from "../../global/Button";
 import { Dynamic } from "../../../context/DynamicContext";
 import Graphi from "./Graphi";
 import Calend from "./Calendar";
+
+import { TbHexagonLetterM } from "react-icons/tb";
 import Popup from "../../reusable/Popup";
 
 const Statistiques = () => {
-  const { pop, setPop, naviStatiCalend } = Dynamic();
+  const { pop, setPop, naviStatiCalend, showHeader, setShowHeader } = Dynamic();
   const [locationBy, setLocationBy] = useState(false);
 
   //   const displayPop = (e) => {
@@ -20,7 +22,7 @@ const Statistiques = () => {
   //     }
   //   };
   return (
-    <StyledStatistiques>
+    <StyledStatistiques $cssmain={showHeader}>
       <ModalMenuStatistiques setLocationBy={setLocationBy} />
       {naviStatiCalend ? <Calend /> : <Graphi />}
       <h1>Statut et action des biens</h1>
@@ -52,6 +54,10 @@ const Statistiques = () => {
         />
         <Popup />
       </div>
+      <TbHexagonLetterM
+        className="logo-menu"
+        onClick={() => setShowHeader(!showHeader)}
+      />
     </StyledStatistiques>
   );
 };
@@ -104,5 +110,26 @@ const StyledStatistiques = styled.div`
     color: #3498db;
     padding: 10px;
     box-shadow: 0px 0px 10px #3498dbb3;
+  }
+  //menu anim M
+  .logo-menu {
+    display: block !important;
+    position: absolute;
+    z-index: 50;
+    bottom: ${({ $cssmain }) => ($cssmain ? "100px" : "10px")};
+    font-size: 4em;
+    color: #150747;
+    filter: drop-shadow(3px 3px 1px #6c6c6c);
+    cursor: pointer;
+    transform: rotateY(45deg);
+    animation: rotateAnimation 1s linear infinite;
+  }
+  @keyframes rotateAnimation {
+    from {
+      transform: rotateY(45deg);
+    }
+    to {
+      transform: rotateY(225deg);
+    }
   }
 `;

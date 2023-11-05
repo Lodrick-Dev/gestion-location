@@ -13,5 +13,5 @@ const Authentification = () => {
 export default Authentification;
 const StyledAuthentification = styled.div`
   /* background: grey; */
-  height: 130vh;
+  height: 100vh;
 `;

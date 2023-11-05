@@ -10,6 +10,7 @@ export const DynamicContextProvider = ({ children }) => {
   const [auth, setAuth] = useState(""); //to navigue vers authentification
   const navigation = useNavigate();
   const paramsUrl = useParams();
+  const [showHeader, setShowHeader] = useState(false);
   return (
     <DynamicContext.Provider
       value={{
@@ -26,6 +27,8 @@ export const DynamicContextProvider = ({ children }) => {
         paramsUrl,
         naviStatiCalend,
         setNaviStatiCalend,
+        showHeader,
+        setShowHeader,
       }}
     >
       {children}
