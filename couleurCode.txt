@@ -9,4 +9,7 @@ maintenance : #ff9900;
 add-loca: #3498db;
 add-material: #6c6c6c;
 
-***on doit désinstallé chartJS et ces supplement
+*****Permet aux public de se connecter et voir ce qu'il y a de disponible
+
+structure info : 
+longueur, largeur , hauteur, poids

@@ -12,14 +12,16 @@ const ModalMenuStatistiques = ({ setLocationBy }) => {
           {naviStatiCalend ? "Statistiques" : "Calendrier"}
         </h2>
       </div>
-      <select
-        onChange={(e) =>
-          setLocationBy(e.target.value === "biens" ? false : true)
-        }
-      >
-        <option value="biens">Les biens</option>
-        <option value="clients">Les clients</option>
-      </select>
+      {!naviStatiCalend ? (
+        <select
+          onChange={(e) =>
+            setLocationBy(e.target.value === "biens" ? false : true)
+          }
+        >
+          <option value="biens">Les biens</option>
+          <option value="clients">Les clients</option>
+        </select>
+      ) : undefined}
     </StyledModalMenuStatistiques>
   );
 };

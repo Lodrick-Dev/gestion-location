@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import AddLocation from "../authentification/forms/AddLocation";
 import { Dynamic } from "../../context/DynamicContext";
+import { MdOutlineClose } from "react-icons/md";
 import AddNewMaterial from "../authentification/forms/AddNewMaterial";
 import Current from "../authentification/components/Current";
 import Dispo from "../authentification/components/Dispo";
@@ -40,6 +41,7 @@ const Popup = () => {
   }, [pop]);
   return (
     <StyledPopup $css={pop} onClick={() => setPop("")}>
+      <MdOutlineClose className="btn-close-pop" />
       {chooseCompo()}
     </StyledPopup>
   );
@@ -60,4 +62,11 @@ const StyledPopup = styled.div`
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
+  .btn-close-pop {
+    color: red;
+    font-size: 2em;
+    position: fixed;
+    top: 50px;
+    cursor: pointer;
+  }
 `;
