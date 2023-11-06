@@ -130,4 +130,16 @@ const StyledAddLocation = styled.div`
       align-items: center;
     }
   }
+  //responsive
+  //884px = 768px
+  @media screen and (max-width: 884px) {
+    width: 70%;
+  }
+  //428px iphone 13 pro max
+  @media screen and (max-width: 428px) {
+    width: 95%;
+    form {
+      width: 75%;
+    }
+  }
 `;

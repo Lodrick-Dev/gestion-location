@@ -52,7 +52,7 @@ const StyledPopup = styled.div`
   display: ${({ $css }) => ($css ? "flex" : "none")};
   background: #292929cc;
   position: fixed;
-  /* display: flex; */
+  backdrop-filter: blur(5px);
   justify-content: center;
   align-items: center;
   z-index: 15;
@@ -68,5 +68,20 @@ const StyledPopup = styled.div`
     position: fixed;
     top: 50px;
     cursor: pointer;
+  }
+  //responsive
+  //884px = 768px
+  @media screen and (max-width: 884px) {
+    width: 100%;
+    .btn-close-pop {
+      top: 150px;
+    }
+  }
+  //428px iphone 13 pro max
+  @media screen and (max-width: 428px) {
+    width: 100%;
+    .btn-close-pop {
+      top: 100px;
+    }
   }
 `;

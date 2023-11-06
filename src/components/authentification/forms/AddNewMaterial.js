@@ -64,4 +64,16 @@ const StyledAddNewMaterial = styled.div`
       font-size: 1.2em;
     }
   }
+  //responsive
+  //884px = 768px
+  @media screen and (max-width: 884px) {
+    width: 70%;
+  }
+  //428px iphone 13 pro max
+  @media screen and (max-width: 428px) {
+    width: 95%;
+    form {
+      width: 75%;
+    }
+  }
 `;
