@@ -13,14 +13,16 @@ const ModalMenuStatistiques = ({ setLocationBy }) => {
         </h2>
       </div>
       {!naviStatiCalend ? (
-        <select
-          onChange={(e) =>
-            setLocationBy(e.target.value === "biens" ? false : true)
-          }
-        >
-          <option value="biens">Les biens</option>
-          <option value="clients">Les clients</option>
-        </select>
+        <div className="box-select">
+          <select
+            onChange={(e) =>
+              setLocationBy(e.target.value === "biens" ? false : true)
+            }
+          >
+            <option value="biens">Les biens</option>
+            <option value="clients">Les clients</option>
+          </select>
+        </div>
       ) : undefined}
     </StyledModalMenuStatistiques>
   );
@@ -30,7 +32,7 @@ export default ModalMenuStatistiques;
 
 const StyledModalMenuStatistiques = styled.div`
   /* background: greenyellow; */
-  width: 15%;
+  width: 100%;
   margin: 0px auto;
   padding: 20px;
   display: flex;
@@ -41,6 +43,7 @@ const StyledModalMenuStatistiques = styled.div`
     display: flex;
     padding: 10px;
     align-items: center;
+    /* background: green; */
   }
   .nav-stati-calend > h1 {
     font-size: 2.3em;
@@ -60,5 +63,33 @@ const StyledModalMenuStatistiques = styled.div`
     outline: none;
     border-radius: 3px;
     cursor: pointer;
+  }
+  //responsive
+  //884px = 768px
+  @media screen and (max-width: 884px) {
+    .box-select {
+      /* background: green; */
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    select {
+      width: 20%;
+      /* background: red; */
+    }
+  }
+
+  //428px iphone 13 promax
+  @media screen and (max-width: 428px) {
+    .nav-stati-calend > h1 {
+      font-size: 1.9em;
+    }
+    .nav-stati-calend > h2 {
+      font-size: 1em;
+    }
+    select {
+      width: 50%;
+    }
   }
 `;

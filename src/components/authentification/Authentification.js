@@ -13,5 +13,10 @@ const Authentification = () => {
 export default Authentification;
 const StyledAuthentification = styled.div`
   /* background: grey; */
-  height: 100vh;
+  /* height: 100vh; */
+
+  //428px iphone 13 promax
+  /* @media screen and (max-width: 428px) {
+    height: 140vh;
+  } */
 `;

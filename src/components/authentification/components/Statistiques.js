@@ -75,12 +75,32 @@ const StyledStatistiques = styled.div`
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
+
+  //resposive
+  //884px = 768px
+  @media screen and (max-width: 884px) {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    .zone-btns {
+      width: 90%;
+    }
+  }
+  //428px iphone 13 pro max
+  @media screen and (max-width: 428px) {
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+  //resposive
   h1 {
     margin-top: 10px;
     text-align: center;
     text-decoration: underline;
   }
   .no-dispo {
+    margin: 10px;
     background: #ff8d8d;
     padding: 10px;
     /* box-shadow: 0px 0px 10px rgba(255, 141, 141, 0.7); */
@@ -88,24 +108,28 @@ const StyledStatistiques = styled.div`
     color: white;
   }
   .dispo {
+    margin: 10px;
     background: #71e07a;
     padding: 10px;
     box-shadow: 0px 0px 10px #71e07ab3;
     color: white;
   }
   .maintenance {
+    margin: 10px;
     background: #ff9900;
     padding: 10px;
     box-shadow: 0px 0px 10px #ff9900b3;
     color: white;
   }
   .add-loca {
+    margin: 10px;
     background: #3498db;
     padding: 10px;
     box-shadow: 0px 0px 10px #3498dbb3;
     color: white;
   }
   .add-material {
+    margin: 10px;
     background: #6c6c6c;
     color: #3498db;
     padding: 10px;
@@ -114,7 +138,8 @@ const StyledStatistiques = styled.div`
   //menu anim M
   .logo-menu {
     display: block !important;
-    position: absolute;
+    position: fixed;
+    left: 10px;
     z-index: 50;
     bottom: ${({ $cssmain }) => ($cssmain ? "100px" : "10px")};
     font-size: 4em;

@@ -22,6 +22,14 @@ const Graphi = () => {
       locationBy: ["Marie", "steeve", "Nel", "Marièm"],
     },
     {
+      name: "Jane",
+      maintenance: 1,
+      age: 5,
+      location: ["1", "Nel", "date 511313311"],
+      date: "",
+      locationBy: ["Marie", "steeve", "Nel", "Marièm"],
+    },
+    {
       name: "Rude",
       age: 1,
       location: 10,
@@ -35,6 +43,13 @@ const Graphi = () => {
         "Lili B",
         "Marie",
       ],
+    },
+    {
+      name: "Monkey",
+      age: 5,
+      location: 20,
+      date: "",
+      locationBy: ["Martin", "Tintin", "Georgie"],
     },
     {
       name: "Monkey",
@@ -163,7 +178,7 @@ const Graphi = () => {
         Nombre de bien <strong>{data.length}</strong>
       </span>
       <ResponsiveContainer className="lolchart">
-        <BarChart data={data} stroke="white">
+        <BarChart data={data} stroke="white" className="bar-chart">
           <XAxis dataKey={"name"} stroke="white" />
           {/* <YAxis /> */}
           <Bar
@@ -186,6 +201,7 @@ export default Graphi;
 
 const StyledGraphi = styled.div`
   background: #292929cc;
+  width: 100%;
   box-shadow: -7px 8px 14px 3px rgb(0 0 0 / 32%);
   backdrop-filter: blur(5px);
   height: 50vh;
@@ -200,9 +216,39 @@ const StyledGraphi = styled.div`
   }
   .lolchart {
     height: 80% !important;
-    width: 80% !important;
+    width: 80%;
   }
   .bar {
     cursor: pointer;
   }
+  /* .recharts-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  } */
+  //responsiv
+  //884px = 768px
+  @media screen and (max-width: 884px) {
+    /* background: red; */
+    width: 100%;
+    /* height: 70vh; */
+    span {
+      /* background: red; */
+      text-align: center;
+      width: 30%;
+    }
+    .lolchart {
+      width: 100%;
+    }
+    .bar-chart {
+      width: 100%;
+      overflow: auto;
+    }
+  }
+
+  //428px iphone 13 promax
+  @media screen and (max-width: 428px) {
+    flex-wrap: nowrap;
+    /* height: 70vh; */
+  }
+  //responsiv
 `;

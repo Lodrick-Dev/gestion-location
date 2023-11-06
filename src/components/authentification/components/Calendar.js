@@ -106,7 +106,7 @@ const Calend = () => {
   const MyEvent = ({ event }) => (
     <div>
       <strong>{event.title}</strong>
-      <p>{event.description}</p>
+      {/* <p>{event.description}</p> */}
     </div>
   );
 
@@ -176,5 +176,20 @@ const StyledCalendar = styled.div`
   }
   .rbc-agenda-view table.rbc-agenda-table > tbody > tr {
     border-bottom: solid 2px greenyellow;
+  }
+
+  //responsive
+  //884px = 768px
+  @media screen and (max-width: 884px) {
+    .rbc-calendar {
+      width: 100%;
+    }
+  }
+  //428px iphone 13 promax
+  @media screen and (max-width: 428px) {
+    padding: 0px;
+    .rbc-calendar {
+      /* padding: 0px; */
+    }
   }
 `;
