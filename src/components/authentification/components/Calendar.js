@@ -13,7 +13,7 @@ const Calend = () => {
     {
       start: new Date(2022, 3, 1, 10, 0), // Exemple : 1er avril 2022
       end: new Date(2022, 3, 5, 13, 0), // Exemple : 5 avril 2022
-      title: "Événement passé 2",
+      title: "Événement passé 22",
     },
     {
       start: new Date(2022, 3, 15, 14, 0),
@@ -21,12 +21,12 @@ const Calend = () => {
       title: "Événement passé 2",
     },
     {
+      start: new Date("2023-11-06"),
+      end: new Date("2023-11-09"),
+      title: "Bateau",
       description: "la eptite description",
       email: "prolodrick@gmail.com",
-      title: "Bateau",
       nom: "Karine",
-      start: "2023-11-06",
-      end: "2023-11-09",
     },
     {
       start: new Date(2023, 10, 1, 10, 0), // Date de début de l'événement
@@ -61,7 +61,7 @@ const Calend = () => {
     // Ajoutez d'autres événements ici...
   ];
 
-  //les boutons de navigation
+  //les boutons de navigation et légende dans section 'agenda'
   const messages = {
     today: "Aujourd'hui",
     next: "Suivant",
@@ -69,6 +69,10 @@ const Calend = () => {
     month: "Mois",
     day: "Jour",
     week: "Semaine",
+    date: "Date",
+    time: "Heure",
+    event: "Événement",
+    allDay: "Toute la journée",
     showMore: (total) => `+${total} plus`,
   };
 
@@ -126,6 +130,9 @@ const Calend = () => {
         eventPropGetter={eventStyleGetter}
         onSelectEvent={eventSelectedToData}
         components={components}
+        // views={Views}
+        // views={{ week: true, month: true }}
+        defaultView="week"
       />
     </StyledCalendar>
   );

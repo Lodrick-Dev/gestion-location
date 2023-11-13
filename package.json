@@ -17,6 +17,7 @@
     "react-scripts": "5.0.1",
     "recharts": "^2.9.2",
     "styled-components": "^6.1.0",
+    "victory-vendor": "^36.6.12",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
